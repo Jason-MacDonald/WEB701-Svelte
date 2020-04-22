@@ -3,7 +3,6 @@ import "firebase/firestore";
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyAf-FNlBh1ajuaUh0zLoB7S8peIbbJHpi4",
   authDomain: "svelte-275004.firebaseapp.com",
   databaseURL: "https://svelte-275004.firebaseio.com",
   projectId: "svelte-275004",
