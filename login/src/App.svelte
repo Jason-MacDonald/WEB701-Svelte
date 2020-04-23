@@ -1,5 +1,22 @@
 <script>
-  import Users from "./Users.svelte";
+  import AppBar from "./AppBar.svelte";
+  import Register from "./Register.svelte";
+  import Login from "./Login.svelte";
+  import Artwork from "./Artworks.svelte";
 </script>
 
-<Users />
+<AppBar />
+<br />
+<br />
+
+<Register />
+<br />
+<br />
+
+<Login />
+<br />
+<br />
+
+<Artwork />
+<br />
+<br />
