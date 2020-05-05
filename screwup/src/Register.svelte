@@ -1,4 +1,6 @@
 <script>
+  import { db } from "./firestore.js";
+
   import firebase from "firebase";
   import * as firebaseui from "firebaseui";
 
@@ -15,9 +17,22 @@
         var errorMessage = error.message;
         console.log(errorCode);
       });
+    addAccount();
     email = "";
     password = "";
     console.log("Account has been registered");
+  };
+
+  const addAccount = () => {
+    const owner = email;
+    const firstName = "";
+    const lastName = "";
+    db.collection("accounts").add({
+      owner,
+      firstName,
+      lastName
+    });
+    console.log("Account Added.");
   };
 </script>
 

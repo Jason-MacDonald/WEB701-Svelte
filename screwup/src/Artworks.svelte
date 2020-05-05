@@ -11,11 +11,14 @@
   let description = "";
   let price = "";
 
-  db.collection("artwork")
+  db.collection("artworks")
     .orderBy("created")
     .onSnapshot(data => {
       artworks = data.docs;
     });
+
+  console.log(artworks);
+
   const addArtwork = () => {
     var user = firebase.auth().currentUser;
     if (user) {
