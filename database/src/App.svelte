@@ -1,30 +1,29 @@
 <script>
-	export let name;
+  import { db } from "./firestore.js";
+
+  import firebase from "firebase";
+  import * as firebaseui from "firebaseui";
+
+  let email = "";
+  let password = "";
+
+  const register = () => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .catch(function(error) {
+        var errorCode = error.code;
+        console.log(errorCode);
+      });
+    email = "";
+    password = "";
+    console.log("Account has been registered");
+  };
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+REGISTER:
+<form class="register" on:submit|preventDefault={register}>
+  <input type="text" bind:value={email} placeholder="Email" required />
+  <input type="text" bind:value={password} placeholder="Password" required />
+  <button>Register</button>
+</form>

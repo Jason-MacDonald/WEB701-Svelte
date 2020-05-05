@@ -1,30 +1,28 @@
 <script>
-	export let name;
+  import { Card, Button, Image } from "smelte";
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+<Card.Card>
+  <div slot="title">
+    <Card.Title
+      title="Artwork Number One"
+      subheader="Gallery A"
+      avatar="https://placekitten.com/64/64" />
+  </div>
+  <div slot="media">
+    <Image class="w-full" src="https://placekitten.com/300/200" alt="kitty" />
+  </div>
+  <div slot="text" class="p-5 pb-0 pt-3 text-gray-700 body-2">
+    This is a svelte example of a simple card.
+    <br />
+    Cards are likely to be use display galleries of
+    <br />
+    Auction Items and Members and events.
+  </div>
+  <div slot="actions">
+    <div class="p-2">
+      <Button text>See More</Button>
+      <Button text>Place Bid</Button>
+    </div>
+  </div>
+</Card.Card>

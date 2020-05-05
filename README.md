@@ -26,6 +26,7 @@ Members can easily add artworks after logging in and a record of the user accoun
 ### Interactive Elements that Engage the Website User
 
 Svelte does not have its own component library yet so ??? Tailwind? Bootstrap?
+Smelte.
 
 ### Store and Retrieve data from a server-side database.
 
